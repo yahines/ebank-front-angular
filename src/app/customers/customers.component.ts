@@ -41,7 +41,7 @@ export class CustomersComponent implements OnInit {
         this.customers=this.customers.pipe(
           map(data=>{
             let index=data.indexOf(c);
-            data.slice(index,1)
+            data.splice(index,1)
             return data;
           })
         );
@@ -53,6 +53,6 @@ export class CustomersComponent implements OnInit {
   }
 
   handleCustomerAccounts(customer: Customer) {
-    this.router.navigateByUrl("/customer-accounts/"+customer.id,{state :customer});
+    this.router.navigateByUrl("admin/customer-accounts/"+customer.id,{state :customer});
   }
 }
